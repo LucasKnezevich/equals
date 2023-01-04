@@ -18,19 +18,28 @@ const Homepage = ({navigation}) => {
 
         <View style={styles.examContainer}>
           <Text style={styles.examHeaderText}>Choose Your Exam Topic:</Text>
-          <Button title="View All Exam Topics" color={Colors.accent.secondary} />
-          <Button
-            title="sign out"
-            color={Colors.accent.secondary}
-            onPress={() => {
-              signOut(dispatch);
-            }}
-          />
-          <Button
-            title="test setup"
-            color={Colors.accent.secondary}
-            onPress={() => navigation.navigate('TestSetup')}
-          />
+
+          <View style={styles.btnContainer}>
+            <Button title="View All Exam Topics" color={Colors.accent.secondary} />
+          </View>
+
+          <View style={styles.btnContainer}>
+            <Button
+              title="sign out"
+              color={Colors.accent.secondary}
+              onPress={() => {
+                signOut(dispatch);
+              }}
+            />
+          </View>
+
+          <View style={styles.btnContainer}>
+            <Button
+              title="test setup"
+              color={Colors.accent.secondary}
+              onPress={() => navigation.navigate('TestSetup')}
+            />
+          </View>
         </View>
       </View>
       <NavBar style={styles.navbar} />
@@ -73,6 +82,9 @@ const styles = StyleSheet.create({
     height: 60,
     marginBottom: 30,
   },
+  btnContainer: {
+    marginBottom: 10
+  }
 });
 
 export default Homepage;
