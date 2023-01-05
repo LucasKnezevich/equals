@@ -67,6 +67,7 @@ const SignIn = ({navigation}) => {
           <Text style={styles.textInputTitle}>Username</Text>
           <TextInput
             placeholder="Enter Username"
+            placeholderTextColor={Colors.text.placeholder}
             style={styles.textInput}
             onChangeText={text => setUsername(text)}
           />
@@ -75,6 +76,7 @@ const SignIn = ({navigation}) => {
           <Text style={styles.textInputTitle}>Password</Text>
           <TextInput
             placeholder=" Enter Password"
+            placeholderTextColor={Colors.text.placeholder}
             secureTextEntry={true}
             style={styles.textInput}
             onChangeText={text => setPassword(text)}
