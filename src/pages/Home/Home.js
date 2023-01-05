@@ -25,19 +25,19 @@ const Homepage = ({navigation}) => {
 
           <View style={styles.btnContainer}>
             <Button
+              title="test setup"
+              color={Colors.accent.secondary}
+              onPress={() => navigation.navigate('TestSetup')}
+            />
+          </View>
+
+          <View style={styles.signoutBtnContainer}>
+            <Button
               title="sign out"
               color={Colors.accent.secondary}
               onPress={() => {
                 signOut(dispatch);
               }}
-            />
-          </View>
-
-          <View style={styles.btnContainer}>
-            <Button
-              title="test setup"
-              color={Colors.accent.secondary}
-              onPress={() => navigation.navigate('TestSetup')}
             />
           </View>
         </View>
@@ -84,6 +84,9 @@ const styles = StyleSheet.create({
   },
   btnContainer: {
     marginBottom: 10
+  },
+  signoutBtnContainer: {
+    marginTop: 280
   }
 });
 
