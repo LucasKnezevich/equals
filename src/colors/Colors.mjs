@@ -6,7 +6,9 @@ export default Colors = {
   text: {
     primary: '#000', // black
     secondary: '#333', //charcoal
-    warning: '#FF0000' // red
+    warning: '#FF0000', // red
+    placeholder: '#b8b8b8' // dark gray
+
   },
   button: {
     primary: '#333', // charcoal

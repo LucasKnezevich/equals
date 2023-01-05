@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, TextInput, View, Alert, Linking, ScrollView, 
 import CheckBox from "@react-native-community/checkbox";
 import Colors from '../../colors/Colors.mjs';
 import Auth from '../../api/Auth.mjs';
-import {setUser, useAuthDispatch} from './auth-context.js';
+import { setUser, useAuthDispatch } from './auth-context.js';
 
 const SignUp = ({navigation}) => {
   const dispatch = useAuthDispatch();
@@ -144,10 +144,11 @@ const SignUp = ({navigation}) => {
         <View style={styles.createAccountContainer}>
           <View style={styles.inputHeaderContainer}>
             <Text style={styles.textInputTitle}>Username</Text>
-            <Text styles={styles.inputMessageText}>{usernameMessage}</Text>
+            <Text style={styles.inputMessageText}>{usernameMessage}</Text>
           </View>
           <TextInput
             placeholder="Enter Username"
+            placeholderTextColor={Colors.text.placeholder}
             style={styles.textInput}
             onChangeText={username => setUsername(username)}
           />
@@ -155,10 +156,11 @@ const SignUp = ({navigation}) => {
           {/* EMAIL */}
           <View style={styles.inputHeaderContainer}>
             <Text style={styles.textInputTitle}>Email Address</Text>
-            <Text styles={styles.inputMessageText}>{emailMessage}</Text>
+            <Text style={styles.inputMessageText}>{emailMessage}</Text>
           </View>
           <TextInput
             placeholder=" Enter Email"
+            placeholderTextColor={Colors.text.placeholder}
             style={styles.textInput}
             onChangeText={email => setEmail(email)}
           />
@@ -166,10 +168,11 @@ const SignUp = ({navigation}) => {
           {/* PASSWORD 1 */}
           <View style={styles.inputHeaderContainer}>
             <Text style={styles.textInputTitle}>Enter Password</Text>
-            <Text styles={styles.inputMessageText}>{password1Message}</Text>
+            <Text style={styles.inputMessageText}>{password1Message}</Text>
           </View>
           <TextInput
             placeholder="Enter Password"
+            placeholderTextColor={Colors.text.placeholder}
             secureTextEntry={true}
             style={styles.textInput}
             onChangeText={password => setPassword1(password)}
@@ -178,10 +181,11 @@ const SignUp = ({navigation}) => {
           {/* PASSWORD 2 */}
           <View style={styles.inputHeaderContainer}>
             <Text style={styles.textInputTitle}>Confirm Password</Text>
-            <Text styles={styles.inputMessageText}>{password2Message}</Text>
+            <Text style={styles.inputMessageText}>{password2Message}</Text>
           </View>
           <TextInput
-            placeholder=" Enter Password"
+            placeholder="Enter Password"
+            placeholderTextColor={Colors.text.placeholder}
             secureTextEntry={true}
             style={styles.textInput}
             onChangeText={password => setPassword2(password)}
@@ -195,7 +199,7 @@ const SignUp = ({navigation}) => {
                 value={termsConditionsCheckbox}
                 onValueChange={newValue => setTermsConditionsCheckbox(newValue)}
               />
-              <Text>
+              <Text style={styles.textPrecedingLink}>
                 Accept
                 <Text
                   style={styles.hyperlink}
@@ -215,7 +219,7 @@ const SignUp = ({navigation}) => {
                 value={eulaCheckbox}
                 onValueChange={newValue => setEulaCheckbox(newValue)}
               />
-              <Text>
+              <Text style={styles.textPrecedingLink}>
                 Accept
                 <Text
                   style={styles.hyperlink}
@@ -281,9 +285,10 @@ const styles = StyleSheet.create({
     // textAlign: 'center'
   },
 
-  //Text:Account Creation
+  //Text:Account Creation Section
   viewTitle: {
     fontSize: 18,
+    color: Colors.text.primary
   },
   createAccountContainer: {
     justifyContent: 'flex-end',
@@ -315,7 +320,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.background.secondary,
     borderRadius: 8,
     fontSize: 18,
-    color: Colors.text.secondary,
+    color: Colors.text.secondary
   },
   createAccountBtn: {
     fontSize: 20,
@@ -323,6 +328,9 @@ const styles = StyleSheet.create({
   hyperlink: {
     color: Colors.link.primary,
     textAlignVertical: 'center'
+  },
+  textPrecedingLink: {
+    color: Colors.text.secondary
   }, 
   logo: {
     width: 200,
